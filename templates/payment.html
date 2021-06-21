@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Document</title>
+
+   <style>
+       .container
+       {
+           height: 100%;
+           width: 100%;
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+       }
+       .form
+       {
+           height: 100%;
+           width: 30%;
+           display: flex;
+           flex-direction: column;
+           align-items: space-around;
+           justify-content: center;
+       }
+
+       .form input, .form button
+       {
+           margin-top: 3%;
+       }
+
+       .form button
+       {
+            height: 40px;
+           background-color: green;
+           border: none;
+           cursor: pointer;
+       }
+   </style>
+</head>
+<body style="background-color: beige;">
+    <h1 style="text-align: center;">Enter Your Details</h1>
+    <div class="container">
+        <form class="form" action="checkout" method="post">
+            
+            <input type=text name="name" value="Enter Name">
+            <input type=text name="email" value ="Enter Email">
+            <input type=text name="number" value = "Enter Phone Number">
+            <input type=text name="address" value="Enter Address">
+            {% csrf_token %}
+            <button type = "submit" name="data_button" value = "{{title}}">Buy</button>
+        </form>
+    </div>
+</body>
+</html>

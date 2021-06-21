@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Document</title>
+
+   <style>
+       .container
+       {
+           height: 100%;
+           width: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: space-around;
+           flex-direction: row;
+       }
+       .card
+       {
+           height: 40%;
+           width: 40%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+           background-color: transparent;
+
+       }
+       .card img
+       {
+           height: 50%;
+           width: 50%;
+       }
+       .card  button
+       {
+           height: 40px;
+           width: 200px;
+           background-color: green;
+           border: none;
+           cursor: pointer;
+       }
+       .second
+       {
+           height: 40%;
+           width: 40%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           flex-direction: column;
+
+       }
+
+   </style>
+</head>
+<body style="background-color: beige;"></body>
+            <div class = "container">
+                {% for i in data %}
+                {% if i.title == title %}
+                    <div class="card">
+                        
+                        <h1 style="text-align: center;">Order Details</h1>
+                        <img src = "{{i.image}}">
+                        <h1>{{i.title}}</h1>
+                        <h3>Price: {{i.price}}</h3>
+                        <h3>Discount Price: {{i.discount_price}} </h3>
+                        <p>{{i.slug}}</p>
+                {% endif %}
+                {% endfor %}
+            </div>
+                <div class="second">
+                    
+                    <h1 style="text-align: center;">Customer Details</h1>
+                    <h3>Name: {{name}}</h3>
+                    <h3>Email: {{email}}</h3>
+                    <h3>Address: {{address}}</h3>
+                    <h3>Contact Number: {{number}}</h3>
+                </div>
+</body>
+</html>
